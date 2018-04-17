@@ -27,6 +27,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         subEgg = (Button)findViewById(R.id.subtract1egg);
         makeBreakfast = (Button)findViewById(R.id.breakfast);
 
+        oneEgg.setOnClickListener(this);
+        twoEggs.setOnClickListener(this);
+        subEgg.setOnClickListener(this);
+        makeBreakfast.setOnClickListener(this);
 
 
 

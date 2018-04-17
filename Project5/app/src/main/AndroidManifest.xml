@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <receiver android:name=".MyReciever">
             <intent-filter>
-                <action android:name="com.ex.annoy" />
+                <action android:name="android.intent.action.PROVIDER_CHANGED"/>
             </intent-filter>
         </receiver>
         <activity android:name=".MainActivity">
@@ -21,7 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".MyService" />
+        <service android:name=".MyService">
+
+        </service>
     </application>
 
 </manifest>

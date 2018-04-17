@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
  */
 
 public class MyService extends Service {
+    private final int MY_NOTIF = 3;
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -28,7 +29,7 @@ public class MyService extends Service {
                 .setOngoing(false)
                 .build();
 
-        notificationManager.notify(0, noti);
+        notificationManager.notify(MY_NOTIF, noti);
 
         return super.onStartCommand(intent, flags, startId);
     }
