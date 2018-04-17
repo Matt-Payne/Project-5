@@ -12,5 +12,10 @@ public class MyReciever extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
+        int intValue = intent.getIntExtra("egg", 0);
+
+        Intent myIntent = new Intent(context,MyService.class);
+        myIntent.putExtra("eggValue",intValue);
+        context.startService(myIntent);
     }
 }
