@@ -19,17 +19,34 @@ public class BreakfastService extends Service {
         return null;
     }
     public int onStartCommand(Intent intent, int flags, int startId) {
-        int intValue = intent.getIntExtra("eggBreakfast", 0);
-        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
+        int intValue = intent.getIntExtra("eggBreakfast", 0);
+
+        if (intValue >= 6){
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        int temp = intValue - 6;
         Notification noti = new Notification.Builder(this)
                 .setContentTitle("Egg")
-                .setContentText(" We are having breakfast, you have " + intValue + " eggs")
+                .setContentText(" We are having breakfast, you have " + temp + " eggs")
                 .setOngoing(false)
                 .setSmallIcon(R.drawable.egg1)
                 .build();
 
         notificationManager.notify(MY_NOTIF, noti);
+        }
+            else {
+            NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+            Notification noti = new Notification.Builder(this)
+                    .setContentTitle("Egg")
+                    .setContentText(" We are having gruel, you have " + intValue + " eggs")
+                    .setOngoing(false)
+                    .setSmallIcon(R.drawable.egg1)
+                    .build();
+
+            notificationManager.notify(MY_NOTIF, noti);
+
+        }
 
         return super.onStartCommand(intent, flags, startId);
     }

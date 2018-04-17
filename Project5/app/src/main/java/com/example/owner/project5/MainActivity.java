@@ -79,17 +79,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.breakfast:
                 //do stuff
-                if (eggTotal > 6 ){
+                if (eggTotal >= 6 ){
 
-                    eggTotal = eggTotal - 6;
+
                     Intent lastIntent = new Intent(this,BreakfastReciever.class);
                     lastIntent.putExtra("egg",eggTotal);
                     sendBroadcast(lastIntent);
+                    eggTotal = eggTotal - 6;
                 }
                 else{
 
                     //gruel thing
-
+                    Intent lastIntent = new Intent(this,BreakfastReciever.class);
+                    lastIntent.putExtra("egg",eggTotal);
+                    sendBroadcast(lastIntent);
 
                 }
                 break;

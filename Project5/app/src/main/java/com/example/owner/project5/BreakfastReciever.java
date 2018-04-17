@@ -13,7 +13,7 @@ public class BreakfastReciever extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         int intValue = intent.getIntExtra("egg", 0);
 
-        Intent myIntent = new Intent(context,BreakfastReciever.class);
+        Intent myIntent = new Intent(context,BreakfastService.class);
         myIntent.putExtra("eggBreakfast",intValue);
         context.startService(myIntent);
     }
