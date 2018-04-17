@@ -24,9 +24,10 @@ public class MyService extends Service {
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         Notification noti = new Notification.Builder(this)
-                .setContentTitle(getString(R.string.app_name))
+                .setContentTitle("Egg")
                 .setContentText(" You have" + intValue + "eggs")
                 .setOngoing(false)
+                .setSmallIcon(R.drawable.egg1)
                 .build();
 
         notificationManager.notify(MY_NOTIF, noti);
