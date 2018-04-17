@@ -8,24 +8,23 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 
 /**
- * Created by Owner on 4/16/2018.
+ * Created by Owner on 4/17/2018.
  */
 
-public class MyService extends Service {
+public class BreakfastService extends Service {
     private final int MY_NOTIF = 3;
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
         return null;
     }
-    @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        int intValue = intent.getIntExtra("eggValue", 0);
+        int intValue = intent.getIntExtra("eggBreakfast", 0);
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         Notification noti = new Notification.Builder(this)
                 .setContentTitle("Egg")
-                .setContentText(" You have " + intValue + " eggs")
+                .setContentText(" We are having breakfast, you have " + intValue + " eggs")
                 .setOngoing(false)
                 .setSmallIcon(R.drawable.egg1)
                 .build();
