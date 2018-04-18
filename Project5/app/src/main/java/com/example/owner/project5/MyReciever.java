@@ -17,5 +17,6 @@ public class MyReciever extends BroadcastReceiver {
         Intent myIntent = new Intent(context,MyService.class);
         myIntent.putExtra("eggValue",intValue);
         context.startService(myIntent);
+        context.stopService(myIntent);
     }
 }

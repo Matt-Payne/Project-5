@@ -16,5 +16,6 @@ public class BreakfastReciever extends BroadcastReceiver {
         Intent myIntent = new Intent(context,BreakfastService.class);
         myIntent.putExtra("eggBreakfast",intValue);
         context.startService(myIntent);
+        context.stopService(myIntent);
     }
 }
